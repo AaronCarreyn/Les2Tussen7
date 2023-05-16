@@ -1,0 +1,26 @@
+﻿@model IList<Person>
+
+@{
+    ViewData["Title"] = "People Index";
+}
+
+<h1>People Index</h1>
+
+<a asp-action="Create" class="btn btn-primary">Create new Person</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <partial name="PersonRowPartial" model="person"/>
+        }
+    </tbody>
+</table>
